@@ -373,7 +373,7 @@ Average Expense Per Day: $1.03
 Highest Income transaction: 
   [I] SALARY $9000.00 on 1 Sep 2020 (Given $4000 bonus!)
 
-Highest Income transaction: 
+Highest Expense transaction: 
   [E] DRINK $9.50 on 20 Sep 2020 (Lunch with boss.)
 
 Income Category by Frequency:

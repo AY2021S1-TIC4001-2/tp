@@ -331,7 +331,7 @@ public class Ui {
             System.out.println("");
 
             String highestExpTrans = Parser.getHighestExpense(transactions,date);
-            System.out.println("Highest Income transaction: \n" + "  " + highestExpTrans);
+            System.out.println("Highest Expense transaction: \n" + "  " + highestExpTrans);
             System.out.println("");
 
             System.out.println("Income Category by Frequency:");
