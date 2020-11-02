@@ -5,6 +5,7 @@ import moneytracker.command.Command;
 import moneytracker.exception.MoneyTrackerException;
 import moneytracker.parser.Parser;
 import moneytracker.storage.Storage;
+import moneytracker.summary.Summary;
 import moneytracker.transaction.Expense;
 import moneytracker.transaction.Income;
 import moneytracker.transaction.TransactionList;
@@ -12,7 +13,6 @@ import moneytracker.transaction.CategoryList;
 import moneytracker.transaction.Transaction;
 import moneytracker.ui.Ui;
 
-import java.time.LocalDate;
 
 /**
  * Implements an application that allows users to manage monetary transactions.
@@ -61,8 +61,8 @@ public class MoneyTracker {
 
     public void run() {
         ui.printLogo();
-        double exp = calExpSummary();
-        double inc = calIncSummary();
+        double exp = Summary.calExpSummary(transactions);
+        double inc = Summary.calIncSummary(transactions);
         ui.printSummary(exp, inc);
         if (budget.getAmount() != 0) {
             if (!budget.calPercentage(exp).equals("0")) {
@@ -83,35 +83,6 @@ public class MoneyTracker {
             }
         }
     }
-
-    private double calIncSummary() {
-        double inc = 0;
-        for (Transaction tran : transactions.getTransactions()) {
-            if (LocalDate.now().getMonth() == tran.getLocalDate().getMonth()) {
-                if (tran instanceof Income) {
-                    inc += tran.getAmountNumber();
-                }
-            }
-        }
-        return inc;
-    }
-
-
-
-    private double calExpSummary() {
-        double exp = 0;
-        for (Transaction tran : transactions.getTransactions()) {
-            if (LocalDate.now().getMonth() == tran.getLocalDate().getMonth()) {
-                if (tran instanceof Expense) {
-                    exp += tran.getAmountNumber();
-                }
-            }
-        }
-        return exp;
-    }
-
-
-
 
     /**
      *  Main method of Money Tracker. This is the starting point of the app.

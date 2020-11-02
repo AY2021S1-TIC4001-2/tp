@@ -70,8 +70,8 @@ public class EditCommand extends Command {
         return index;
     }
 
-    private void updateTransaction(Transaction transactionToEdit, HashMap<String,
-            String> editParams, CategoryList categories, String type) throws MoneyTrackerException {
+    private void updateTransaction(Transaction transactionToEdit, HashMap<String, String> editParams,
+                                   CategoryList categories, String type) throws MoneyTrackerException {
         if (editParams.containsKey("category")) {
             String category = editParams.get("category");
             if (!(categories.checkIfCategoryExists(category, type))) {

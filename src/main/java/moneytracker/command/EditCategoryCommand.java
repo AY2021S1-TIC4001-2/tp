@@ -62,11 +62,12 @@ public class EditCategoryCommand extends Command {
         String currentName = categoryToEdit.getName();
         String currentDescription = categoryToEdit.toString();
         categoryToEdit.setName(newName.toUpperCase());
-        transactions.updateTransactionsCategory(currentName, newName);
+        transactions.updateTransactionsCategory(currentName, newName.toUpperCase());
         String type = categoryToEdit.getType().toLowerCase() + " category";
         String newDescription = categoryToEdit.toString();
         ui.printEditItem(currentDescription, newDescription, type);
         storage.saveCategories(categories);
+        storage.saveTransactions(transactions);
         categories.setIsInitialized(false);
     }
 }

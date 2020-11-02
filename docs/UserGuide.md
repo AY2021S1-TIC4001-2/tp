@@ -391,10 +391,8 @@ Income Category by Amount:
 Expense Category by Amount:
   [E] DRINK $24.0
   [E] FOOD $7.0
-____________________________________________________________________
-You:  
+____________________________________________________________________ 
 ```
-
 ### Exiting the program: `exit`
 Exits the program. 
 
@@ -411,6 +409,7 @@ Bye! Hope to see you again soon.
 ### Saving the data
 There is no save command because any change 
 to the data will be automatically saved.
+
 
 ## FAQ
 
